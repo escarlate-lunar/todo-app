@@ -1,0 +1,6 @@
+todo-app/
+├── index.php       # Script Principal
+├── config.php      # Conexão com a Base de Dados
+├── create.php      # Adicionar Novas Tarefas
+├── update.php      # Marcar Tarefas Finalizadas
+└── delete.php      # Deletar Tarefas
