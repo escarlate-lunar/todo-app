@@ -5,7 +5,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
     
     try {
-        $statement = $pdo -> prepare("UPDATE tasks SET is_completed = NOT is_completed WHERE id = :id");
+        $statement = $pdo -> prepare("UPDATE tasks SET is_done = NOT is_done WHERE id = :id");
         $statement -> execute([':id' => $id]);
     } catch(PDOException $e) {
         die("Error: " . $e -> getMessage());

@@ -1,5 +1,3 @@
-<!-- Script Central -->
-
 <?php include 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -28,7 +26,7 @@ TODO:
 <body class="container mt-5">
     <h1>Minha Lista de Tarefas</h1>
 
-    <!-- Formulário de Nova Tarefa -->
+    <!-- formulário de nova tarefa -->
     <form action="create.php" method="POST" class="mb-4">
         <div class="input-group">
             <input type="text" name="task" class="form-control" placeholder="Nova tarefa" required>
@@ -36,13 +34,13 @@ TODO:
         </div>
     </form>
 
-    <!-- Exibir Tarefas -->
+    <!-- exibição de tarefas -->
     <ul class="list-group">
         <?php
         $statement = $pdo -> query("SELECT * FROM tasks ORDER BY creation_date DESC");
 
         while ($row = $statement -> fetch(PDO::FETCH_ASSOC)) {
-            $taskClass = $row['is_completed'] ? 'text-decoration-line-through' : '';
+            $taskClass = $row['is_done'] ? 'text-decoration-line-through' : '';
             echo "
             <li class='list-group-item d-flex justify-content-between align-items-center'>
                 <span class='$taskClass'>{$row['task']}</span>
